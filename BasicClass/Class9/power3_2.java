@@ -1,0 +1,27 @@
+package BasicClass.Class9;
+
+public class power3_2 {
+    public static void main(String[] args){
+        System.out.println(power(2,0)); //1
+        System.out.println(power(2,3)); // 8
+        System.out.println(power(0,10)); // 0
+        System.out.println(power(-2,5)); // -32
+        System.out.println(power(-1,12345));
+    }
+
+    public static long power(int a, int b){
+        // base case
+        if (b == 0){
+            return 1;
+        } else if (b == 1){
+            return a;
+        }
+
+        long half = power(a, b/2);
+        if (b % 2 == 1){
+            return half * half * a;
+        } else {
+            return half * half;
+        }
+    }
+}
